@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/diffdrive</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+    <mu1>200</mu1>
+    <mu2>200</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <mu1>200</mu1>
+    <mu2>200</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  
+  <gazebo reference="front_support">
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="back_support">
+    <mu1>0</mu1>
+    <mu2>0</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>

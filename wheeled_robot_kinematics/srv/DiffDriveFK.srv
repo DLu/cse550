@@ -1,0 +1,5 @@
+geometry_msgs/Pose2D pose
+wheeled_robot_kinematics/DiffDriveAction action
+---
+geometry_msgs/Pose2D end_pose
+

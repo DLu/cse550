@@ -1,0 +1,33 @@
+<launch>
+
+  <arg name="axle" default="0.5" />
+  <arg name="radius" default="0.25" />
+  <arg name="max_speed" default="1.0" />
+  
+  <arg name="gui" default="true"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="gui" value="$(arg gui)" />
+  </include>
+  
+  <param name="/axle_length" value="$(arg axle)"/>
+  <param name="/wheel_radius" value="$(arg radius)"/>
+  <param name="/max_speed" value="$(arg max_speed)"/>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+	 command="$(find wheeled_robot_sim)/src/generate.py '$(find wheeled_robot_sim)/diffdrive.xacro' $(arg axle) $(arg radius)" />
+	 
+  <rosparam file="$(find wheeled_robot_sim)/config/pids.yaml" ns="/diffdrive/gazebo_ros_control/pid_gains/left_wheel_joint" />
+  <rosparam file="$(find wheeled_robot_sim)/config/pids.yaml" ns="/diffdrive/gazebo_ros_control/pid_gains/right_wheel_joint" />
+  
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model diffdrive -param robot_description"/>
+	
+  <node name="odom_to_tf" pkg="wheeled_robot_sim" type="odom_to_tf.py" />
+	
+  <include file="$(find wheeled_robot_sim)/launch/controls.launch" />
+
+</launch>

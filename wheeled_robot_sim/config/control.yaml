@@ -1,0 +1,15 @@
+diffdrive:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  left_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_wheel_joint
+  right_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_wheel_joint
+
+

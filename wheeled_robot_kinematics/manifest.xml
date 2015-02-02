@@ -1,0 +1,10 @@
+<package>
+  <description brief="wheeled_robot_kinematics">
+     wheeled_robot_kinematics
+  </description>
+  <author>David V. Lu!!</author>
+  <license>BSD</license>
+  <depend package="geometry_msgs"/>
+</package>
+
+
