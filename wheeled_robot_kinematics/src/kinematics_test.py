@@ -114,8 +114,8 @@ if __name__ == "__main__":
     C1 = 1.137
     C2 = 1.770
     kt.forward_test(action=( 3, 2,1),pose1=( C1,-C2,-2), axle=0.5)
-    kt.forward_test(action=( 2, 3,1),pose1=( C1, C2,2), axle=0.5)
-    kt.forward_test(action=(-3,-2,1),pose1=(-C1,-C2,2), axle=0.5)
+    kt.forward_test(action=( 2, 3,1),pose1=( C1, C2, 2), axle=0.5)
+    kt.forward_test(action=(-3,-2,1),pose1=(-C1,-C2, 2), axle=0.5)
     kt.forward_test(action=(-2,-3,1),pose1=(-C1, C2,-2), axle=0.5)
     
     kt.forward_test(pose0=(1,5,0),action=(3,3,10),pose1=(31,5,0))
@@ -123,8 +123,8 @@ if __name__ == "__main__":
     kt.forward_test(pose0=(-1,-1,pi/2),action=(3,3,1),pose1=(-1,2,pi/2))
     kt.forward_test(pose0=(-5,0,pi/3),action=(3,3,5),pose1=(2.5,12.99,pi/3))
     
-    kt.forward_test(pose0=(3,3,-pi/5),action=(1,5,8.3),pose1=(4.127, 3.766, 1.156))
-    kt.forward_test(pose0=(3,3,-pi/5),action=(1,5,8.3),pose1=(3.080,3.256,-3.040), axle=0.22, radius=0.9)
+    kt.forward_test(pose0=(3,3,-pi/5),action=(1,5,8.3),pose1=(4.127, 3.304, 1.156))
+    kt.forward_test(pose0=(3,3,-pi/5),action=(1,5,8.3),pose1=(3.080, 3.298,-3.040), axle=0.22, radius=0.9)
         
     kt.inverse_test(moves=0)
     kt.inverse_test(pose1=(3,0,   0), moves=1)
