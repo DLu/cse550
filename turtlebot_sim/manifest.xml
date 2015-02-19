@@ -1,0 +1,15 @@
+<package>
+  <description brief="turtlebot_sim">
+
+     turtlebot_sim
+
+  </description>
+  <author>David V. Lu!!</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/turtlebot_sim</url>
+  <depend package="stage_ros"/>
+
+</package>
+
+
