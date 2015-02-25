@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find openni_launch)/launch/openni.launch"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cse550_kinect)/kinect.rviz" respawn="true"/>
+</launch>

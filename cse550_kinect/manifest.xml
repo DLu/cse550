@@ -1,0 +1,16 @@
+<package>
+  <description brief="cse550_kinect">
+
+     cse550_kinect
+
+  </description>
+  <author>David V. Lu!!</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cse550_kinect</url>
+  <depend package="openni_launch"/>
+  <depend package="rviz"/>
+
+</package>
+
+
