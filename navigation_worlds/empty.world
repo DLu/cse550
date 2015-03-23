@@ -1,0 +1,28 @@
+define topurg ranger
+(
+  sensor(
+     range [ 0.0  5.0 ]
+     fov 270.0
+     samples 90
+  )
+
+  color "black"
+  size [ 0.05 0.05 0.1 ]
+)
+
+define turtlebot position
+(
+  size [ 0.2552 0.2552 0.40 ]
+
+  # [ xmin xmax ymin ymax zmin zmax amin amax ]
+  velocity_bounds     [-1 1 -0.8 0.8 0 0 -28 28 ]
+  acceleration_bounds [-1 1 -1     1 0 0 -54 54]
+  
+  origin [0 0 0 0]
+  gui_nose 1
+  drive "omni"
+  
+  topurg(pose [ 0 0 0 0 ])
+)
+
+turtlebot( pose [ 0 0 0 0.000 ] name "turtle" color "blue")

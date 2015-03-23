@@ -1,0 +1,5 @@
+<launch>
+    <node name="stage_ros" pkg="stage_ros" type="stageros" args="-g $(find navigation_worlds)/empty.world"/>
+    <node name="st0" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /odom 10"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_worlds)/navworld.rviz"/>
+</launch>

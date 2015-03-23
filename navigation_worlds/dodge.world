@@ -1,0 +1,54 @@
+define topurg ranger
+(
+  sensor(
+     range [ 0.0  5.0 ]
+     fov 270.0
+     samples 90
+  )
+
+  color "black"
+  size [ 0.05 0.05 0.1 ]
+)
+
+define turtlebot position
+(
+  size [ 0.2552 0.2552 0.40 ]
+
+  # [ xmin xmax ymin ymax zmin zmax amin amax ]
+  velocity_bounds     [-1 1 -0.8 0.8 0 0 -28 28 ]
+  acceleration_bounds [-1 1 -1     1 0 0 -54 54]
+  
+  origin [0 0 0 0]
+  gui_nose 1
+  drive "omni"
+  
+  topurg(pose [ 0 0 0 0 ])
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+floorplan
+( 
+  name "cse550"
+  bitmap "dodge.pgm"
+  size [20.0 20.0 3]
+  pose [ 0 0 0 0  ]
+)
+
+
+turtlebot( pose [ -8 0 0 0.000 ] name "turtle" color "blue")
