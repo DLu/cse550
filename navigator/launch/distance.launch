@@ -1,0 +1,6 @@
+<launch>
+    <arg name="easy" default="true"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigator)/nav.rviz" respawn="true"/>
+    <node name="distance_check" pkg="navigator" type="distance_check.py" args="$(find localization)/EasyMap.bag -c -t " if="$(arg easy)"/>
+    <node name="distance_check" pkg="navigator" type="distance_check.py" args="$(find localization)/CSE550Map.bag -c " unless="$(arg easy)"/>
+</launch>

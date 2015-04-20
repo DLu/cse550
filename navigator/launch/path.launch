@@ -1,0 +1,6 @@
+<launch>
+    <arg name="easy" default="true"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigator)/nav.rviz" respawn="true"/>
+    <node name="plan" pkg="navigator" type="plan.py" args="$(find localization)/EasyMap.bag" if="$(arg easy)"/>
+    <node name="plan" pkg="navigator" type="plan.py" args="$(find localization)/CSE550Map.bag" unless="$(arg easy)"/>
+</launch>
