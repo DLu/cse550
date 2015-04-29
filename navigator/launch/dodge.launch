@@ -2,10 +2,10 @@
     <rosparam param="/costmap">
       resolution: 0.1
       size: 200
-      origin: -10.0
+      origin: -2.0
     </rosparam>
-    <node name="stage_ros" pkg="stage_ros" type="stageros" args="-g $(find navigation_worlds)/dodge.world"/>
-    <node name="st0" pkg="tf" type="static_transform_publisher" args="-8 0 0 0 0 0 /map /odom 10"/>
+    <node name="stage_ros" pkg="stage_ros" type="stageros" args="-g $(find navigation_worlds)/dodge2.world"/>
+    <node name="st0" pkg="navigator" type="static_tf.py" />
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigator)/nav.rviz" respawn="true"/>
     <node name="drive" pkg="assignment05" type="drive.py" />
 </launch>
